@@ -132,6 +132,7 @@ def makeSVG(data, background_color, border_color):
     songName = item["name"].replace("&", "&amp;")
     songURI = item["external_urls"]["spotify"]
     artistURI = item["artists"][0]["external_urls"]["spotify"]
+    print(item["preview_url"])
 
     dataDict = {
         "contentBar": contentBar,
