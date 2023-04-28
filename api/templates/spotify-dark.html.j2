@@ -123,7 +123,8 @@
                 {{barCSS|safe}}
             </style>
             <script>
-                window.parent.postMessage({{songURI}}, '*');
+                const songURI = "{{songURI}}";
+                window.parent.postMessage("{{songURI}}", '*');
             </script>
 
             <!-- <div class="currentStatus" color="white">{{status}}</div> -->
