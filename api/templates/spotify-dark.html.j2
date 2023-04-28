@@ -123,8 +123,7 @@
                 {{barCSS|safe}}
             </style>
             <script>
-                console.log("{{songURI}}")
-                const play = {{songURI}}
+                window.parent.postMessage({{songURI}}, '*');
 
             </script>
 
