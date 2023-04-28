@@ -171,6 +171,10 @@ def catch_all(path):
 
     return resp
 
+@app.route('/link')
+def link():
+    return "hello"
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True, port=os.getenv("PORT") or 5000)
 
