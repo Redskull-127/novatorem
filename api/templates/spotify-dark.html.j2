@@ -126,7 +126,7 @@
                 const sendMessageToParent = (message) => {
                     window.parent.postMessage(message, '*');
                   }
-                  sendMessageToParent({ data: {{songURI}}})
+                  sendMessageToParent({{songURI}})
 
             </script>
 
