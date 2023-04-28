@@ -132,7 +132,7 @@ def makeSVG(data, background_color, border_color):
     songName = item["name"].replace("&", "&amp;")
     songURI = item["external_urls"]["spotify"]
     artistURI = item["artists"][0]["external_urls"]["spotify"]
-    print(item["preview_url"])
+    playURI = item["preview_url"]
 
     dataDict = {
         "contentBar": contentBar,
@@ -144,7 +144,8 @@ def makeSVG(data, background_color, border_color):
         "image": image,
         "status": currentStatus,
         "background_color": background_color,
-        "border_color": border_color
+        "border_color": border_color,
+        "playURI": playURI
     }
 
     return render_template(getTemplate(), **dataDict)
@@ -168,7 +169,6 @@ def catch_all(path):
     resp.headers["Cache-Control"] = "s-maxage=1"
 
     return resp
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True, port=os.getenv("PORT") or 5000)
