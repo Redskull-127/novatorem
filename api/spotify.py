@@ -130,9 +130,10 @@ def makeSVG(data, background_color, border_color):
 
     artistName = item["artists"][0]["name"].replace("&", "&amp;")
     songName = item["name"].replace("&", "&amp;")
-    songURI = item["external_urls"]["spotify"]
+#     songURI = item["external_urls"]["spotify"]
+    songURI = item["preview_url"]
     artistURI = item["artists"][0]["external_urls"]["spotify"]
-    playURI = item["preview_url"]
+#     playURI = item["preview_url"]
 
     dataDict = {
         "contentBar": contentBar,
@@ -145,7 +146,7 @@ def makeSVG(data, background_color, border_color):
         "status": currentStatus,
         "background_color": background_color,
         "border_color": border_color,
-        "playURI": playURI
+#         "playURI": playURI
     }
 
     return render_template(getTemplate(), **dataDict)
